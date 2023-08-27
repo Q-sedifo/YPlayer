@@ -1,0 +1,40 @@
+
+.mobile-menu {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+
+    z-index: 1000;
+
+    padding: var(--small-padding);
+    
+    font-size: var(--small-font);
+
+    background-color: var(--secondary);
+
+    a {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+
+        & .box-icon_active {
+            display: none;
+        }
+
+        &.active {
+            .box-icon {
+                display: none;
+            }
+
+            .box-icon_active {
+                display: block;
+            }
+        }
+    }
+
+    @media screen and (min-width: 900px) {
+        display: none;
+    }
+}

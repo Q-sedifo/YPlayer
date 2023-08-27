@@ -1,0 +1,58 @@
+
+.playlist {
+    background-color: var(--primary);
+
+    &__preview {
+        width: 100%;
+        height: 30vh;
+        background-color: var(--secondary);
+
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+
+        position: relative;
+    }
+
+    &__info {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        position: absolute;
+        width: 100%;
+        left: 0; bottom: 0;
+        width: 100%;
+
+        .container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-direction: row;
+            width: 100%;
+    
+            padding: calc(var(--large-padding) * 2);
+        }
+    }
+
+    &__title {
+        font-weight: var(--font-weight-bold);
+        font-size: var(--large-font);
+        color: var(--white);
+    }
+
+    &__songs-list {
+        min-height: 70vh;
+        overflow-x: hidden;
+    }
+
+    &__tracks-count {
+        color: var(--gray);
+        font-size: var(--basic-font);
+    }
+}

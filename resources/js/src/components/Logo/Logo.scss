@@ -1,0 +1,22 @@
+
+.logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    gap: var(--mini-padding);
+
+    cursor: pointer;
+
+    &__img {
+        width: var(--icon-height);
+        height: var(--icon-height);
+    }
+
+    &__text {
+        color: var(--text-color);
+        font-weight: 700;
+        font-size: var(--icon-height);
+        letter-spacing: -1px;
+    }
+}

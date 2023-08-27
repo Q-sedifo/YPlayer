@@ -1,0 +1,43 @@
+
+.song-tertiary {
+    position: relative;
+    overflow: hidden;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+
+    background-color: var(--secondary) !important;
+    border-radius: 10px;
+
+    flex: 0 0 auto;
+
+    padding: var(--base-padding);
+    cursor: pointer;
+
+    width: 200;
+    height: 120px;
+
+    .box-icon svg {
+        fill: var(--custom);
+    }
+
+    &__name {
+        width: 100%;
+        position: absolute;
+
+        left: 0; bottom: 0;
+        font-weight: var(--font-weight-bold);
+        padding: 0 var(--base-padding) var(--base-padding) var(--base-padding);
+        
+        word-wrap: break-word;
+        white-space: nowrap;
+
+        text-overflow: ellipsis;
+        overflow: hidden;
+    }
+}

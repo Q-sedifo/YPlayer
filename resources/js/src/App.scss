@@ -1,0 +1,347 @@
+@import url('https://fonts.googleapis.com/css2?family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+:root {
+    // Base variables
+    --small-font: 12px;
+    --basic-font: 14px;
+    --middle-font: 18px;
+    --large-font: 20px;
+
+    --font-weight-basic: 400;
+    --font-weight-bolder: 500;
+    --font-weight-bold: 700;
+
+    --mini-padding: 2px;
+    --small-padding: 5px;
+    --middle-padding: 10px;
+    --base-padding: 15px;
+    --large-padding: 20px;
+
+    --icon-height: 24px;
+
+    --custom: rgb(48, 113, 242);
+
+    --white: #fff;
+    --black: #000;
+    --black-transparent: rgba(0, 0, 0, 0.5);
+    --gray: rgb(128, 128, 128);
+    --gray-dark: rgb(53, 53, 53);
+    --gray-transparent: rgba(128, 128, 128, 0.5);
+    --red: #ce3b3b;
+}
+
+@media screen and (max-width: 500px) {
+    :root {
+        --small-font: 10px;
+        --basic-font: 14px;
+        --middle-font: 18px;
+        --large-font: 20px;
+
+        --icon-height: 20px;
+    }
+}
+
+html {
+    --text-color: var(--white);
+    --primary: rgba(20, 20, 20, 1);
+    --secondary: rgba(28, 28, 30, 1);
+
+    --custom-transparent: rgba(48, 113, 242, 0.2);
+}
+
+html[data-theme='light'] {
+    --text-color: var(--black);
+    --primary: rgba(242, 242, 243, 1);
+    --secondary: #fff;
+
+    --custom-transparent: rgba(48, 113, 242, 1);
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'PT Sans', sans-serif;
+    outline: none;
+    border: none;
+    
+    -webkit-tap-highlight-color: transparent;
+}
+
+::selection {
+    background-color: var(--custom);
+    color: var(--white);
+}
+
+::-webkit-scrollbar {
+    width: 12px;
+}
+
+::-webkit-scrollbar-track {
+    background-color: var(--primary);
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: var(--gray);
+}
+
+body {
+    background-color: var(--primary);
+    color: var(--text-color);
+    overflow-x: hidden;
+}
+
+a {
+    text-decoration: none;
+    color: var(--text-color);
+}
+
+#app {
+    position: relative;
+
+    overflow: hidden;
+
+    min-height: 100vh;
+
+    background: linear-gradient(190deg, var(--custom) 0%, rgba(255, 255, 255, 0) 50%);
+    background-size: 1500%;
+    animation: gradient 40s infinite linear;
+
+    @media screen and (max-width: 500px) {
+        animation: gradient 30s infinite linear;
+    }
+
+    @media screen and (max-width: 900px) {
+        // padding-bottom: 55px;
+    }
+}
+
+@keyframes gradient {
+    0% {
+        background-position: 30% 50%;
+    }
+    30% {
+        background-position: 60% 50%;
+    }
+    60% {
+        background-position: 70% 30%;
+    }
+    100% {
+        background-position: 30% 50%;
+    }
+}
+
+.btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    gap: var(--base-padding);
+
+    padding: var(--middle-padding) var(--large-padding);
+
+    font-size: var(--large-font);
+    font-weight: var(--font-weight-bold);
+
+    border-radius: 30px;
+    color: var(--custom);
+    background-color: var(--secondary);
+
+    cursor: pointer;
+
+    .box-icon svg {
+        fill: var(--custom);
+    }
+
+    &_default {
+        background-color: var(--white);
+        color: var(--black);
+
+        .box-icon svg {
+            fill: var(--black);
+        }
+    }
+}
+
+.switch {
+    display: flex;
+    align-items: center;
+    justify-content: start;
+
+    position: relative;
+    width: 60px;
+
+    background-color: var(--gray);
+    border-radius: 20px;
+    cursor: pointer;
+    padding: var(--small-padding);
+
+    transition: 0.3s;
+
+    &_active {
+        background-color: var(--custom);
+        justify-content: end;
+    }
+
+    &:after {
+        content: '';
+        display: block;
+        background-color: var(--secondary);
+        padding: var(--middle-padding);
+        border-radius: 50%;
+    }
+}
+
+.box-icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    padding: var(--small-padding);
+
+    svg {
+        display: block;
+        width: 20px;
+        height: 20px;
+    }
+
+    &_large {
+        svg {
+            width: 50px;
+            height: 50px;
+        }
+    }
+
+    &_anim {
+        border-radius: 50%;
+        transition: 0.3s;
+
+        &:hover {
+            background-color: var(--gray-transparent);
+        }
+    }
+}
+
+.container {
+    max-width: 1450px;
+    margin: 0 auto;
+    overflow-x: hidden;
+}
+
+.center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.block {
+    margin-bottom: var(--large-padding);
+
+    &__header {
+        width: 100%;
+        overflow: hidden;
+
+        letter-spacing: 0.8px;
+
+        padding: var(--base-padding) var(--base-padding) 0 var(--base-padding);
+    }
+
+    &__message {
+        width: 100%;
+        font-weight: var(--font-weight-bold);
+        color: var(--gray);
+        text-align: center;
+    }
+
+    @media screen and (max-width: 900px) {
+        &__header {
+            font-size: var(--basic-font);
+        }
+    }
+}
+
+.form_base {
+    padding: var(--large-padding);
+
+    &__header, &__footer {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: var(--base-padding);
+
+        .loader {
+            transform: scale(0.5);
+        }
+    }
+
+    &__content {
+        display: flex;
+        flex-direction: column;
+        gap: var(--base-padding);
+        padding: var(--base-padding) 0;
+    }
+
+    &__error {
+        width: 100%;
+        border-radius: 20px;
+        text-align: center;
+        padding: var(--small-padding);
+        font-weight: var(--font-weight-bold);
+        background-color: var(--red);
+    }
+
+    &__section {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        gap: var(--small-padding);
+
+        input {
+            border-radius: 20px;
+            padding: var(--base-padding);
+            font-weight: var(--font-weight-bold);
+        }
+    }
+
+    &__footer {
+        button {
+            flex: 1;
+        }
+    }
+
+    @media screen and (max-width: 900px) {
+        width: 100%;
+    }
+}
+
+
+// Classes for CssTransitionGroup
+.appearance-enter {
+    opacity: 0;
+}
+.appearance-enter-active {
+    opacity: 1;
+    transition: opacity 200ms;
+}
+.appearance-exit {
+    opacity: 1;
+}
+.appearance-exit-active {
+    opacity: 0;
+    transition: opacity 200ms;
+}
+
+.slide-in-enter {
+    transform: translateX(100%);
+}
+.slide-in-enter-active {
+    transform: translateX(0);
+    transition: transform 200ms ease-in-out;
+}
+.slide-in-exit {
+    transform: translateX(0);
+}
+.slide-in-exit-active {
+    transform: translateX(calc(100% + var(--base-padding)));
+    transition: transform 200ms ease-in-out;
+}

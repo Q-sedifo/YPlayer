@@ -1,0 +1,76 @@
+
+.playlists {
+    &__list {
+        display: flex;
+        flex-wrap: wrap;
+        gap: var(--base-padding);
+
+        padding: var(--base-padding) 0;
+    }
+
+    &__item {
+        width: 200px;
+        min-width: 200px;
+    }
+
+    &__preview {
+        width: 200px;
+        height: 200px;
+
+        overflow: hidden;
+
+        position: relative;
+
+        background-color: var(--secondary);
+
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+
+        border-radius: 5px;
+    }
+
+    &__title {
+        max-width: 100%;
+        height: 1.2em;
+        word-wrap: break-word;
+        font-weight: var(--font-weight-bold);
+
+        white-space: nowrap;
+        text-overflow: ellipsis;
+
+        margin-top: var(--small-padding);
+        overflow: hidden;
+    }
+
+    &__tracks {
+        color: var(--gray);
+        padding: var(--base-padding);
+        background-color: var(--black-transparent);
+
+        &_mobile {
+            display: none;
+            font-size: var(--small-font);
+            color: var(--gray);
+        }
+    }
+
+    &__add-btn {
+        color: var(--custom);
+
+        .box-icon svg { fill: var(--custom) }
+    }
+
+    @media screen and (max-width: 900px) {
+        &__add-btn {
+            width: 90%;
+            margin: 0 auto;
+        }
+
+        &__list {
+            flex-direction: row;
+            padding: var(--base-padding);
+            justify-content: space-around;
+        }
+    }
+}

@@ -1,0 +1,118 @@
+
+.song-primary {
+    padding: var(--middle-padding) var(--base-padding);
+    
+    width: 100%;
+    max-width: 100%;
+
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    gap: var(--base-padding);
+
+    position: relative;
+
+    cursor: pointer;
+
+    .music-bars {
+        display: none;
+        transform: scale(0.7);
+    }
+
+    &_active {
+        .music-bars {
+            display: flex;
+        }
+
+        .song-primary__preview .box-icon {
+            display: none;
+        }
+    }
+
+    &__left-side, &__right-side {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: row;
+        gap: var(--base-padding);
+    }
+
+    &__left-side {
+        flex: 2;
+        white-space: nowrap;
+        overflow-x: hidden;
+    }
+
+    &__right-side {
+        width: fit-content;
+    }
+
+    &__preview {
+        width: 40px;
+        height: 40px;
+        background-color: var(--secondary);
+
+        padding: var(--small-padding);
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    &__info {
+        width: 100%;
+        overflow: hidden;
+
+        display: flex;
+        justify-content: space-between;
+        flex-direction: column;
+        gap: var(--small-padding);
+    }
+
+    &__duration {
+        color: var(--gray);
+        font-size: var(--small-font);
+        font-weight: var(--font-weight-bold);
+    }
+
+    &__name {
+        overflow-x: hidden;
+        width: 100%;
+        white-space: nowrap;
+        font-weight: var(--font-weight-bold);
+    }
+
+    &__more-btn {
+        svg { fill: var(--gray); }
+    }
+
+    &__settings {
+        display: flex;
+        align-items: center;
+        gap: inherit;
+
+        .box-icon {
+            &:hover svg {
+                fill: var(--custom);
+            }
+
+            svg { 
+                fill: var(--gray); 
+            }
+        }
+    }
+
+    &_removed {
+        animation: removeSong 0.5s ease 0s 1 normal forwards;
+    }
+}
+
+@keyframes removeSong {
+    0% {
+        transform: translateX(0%);
+    }
+    100% {
+        transform: translateX(100%);
+        display: none;
+    }
+}

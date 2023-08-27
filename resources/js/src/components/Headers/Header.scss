@@ -1,0 +1,121 @@
+
+#header-playlist {
+    .box-icon svg {
+        fill: var(--white);
+    }
+}
+
+#header-back {
+    background-color: var(--secondary);
+}
+
+.header {
+    width: 100%;
+    position: fixed;
+    left: 0; top: 0;
+
+    z-index: 1000;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+
+    transition: 0.3s;
+
+    padding: var(--base-padding);
+    padding-top: calc(env(safe-area-inset-top) + var(--base-padding));
+
+    &__menu {
+        display: flex;
+        align-items: center;
+        flex-direction: row;
+        gap: var(--large-padding);
+
+        font-size: var(--large-font);
+        font-weight: var(--font-weight-bold);
+
+        a {
+            color: var(--gray);
+
+            &.active, &:hover {
+                color: var(--text-color);
+            }
+        }
+    }
+
+    &__title {
+        font-size: var(--large-font);
+        font-weight: var(--font-weight-bold);
+    }
+
+    &__row {
+        display: flex;
+        align-items: center;
+        flex-direction: row;
+        gap: var(--base-padding);
+    }
+
+    #header__playlist-title {
+        font-weight: var(--font-weight-bold);
+        font-size: var(--large-font);
+        transition: 0.3s;
+        opacity: 0;
+    }
+
+    &_active {
+        .box-icon svg {
+            fill: var(--text-color) !important;
+        }
+
+        background-color: var(--secondary);
+
+        #header__playlist-title {
+            opacity: 1;
+        }
+    }
+
+    &__playlists-more-btn {
+        position: relative;
+    }
+
+    &__playlists-settings {
+        position: absolute;
+        width: 200px; 
+        right: 0; top: calc(100% + var(--base-padding));
+        background-color: var(--gray-dark);
+        border-radius: 5px;
+        
+        max-width: 100%;
+        min-width: 250px;
+        overflow-x: hidden;
+
+        div, label {
+            display: block;
+            width: 100%;
+            padding: var(--middle-padding) var(--base-padding);
+            color: var(--white);
+            transition: 0.2s linear;
+
+            cursor: pointer;
+
+            &:hover {
+                background-color: var(--gray);
+            }
+        }
+    }
+
+    &__user-name {
+        color: var(--gray);
+        font-weight: var(--font-weight-bold);
+        font-size: var(--base-font);
+    }
+
+    @media screen and (max-width: 900px) {
+        &__menu {
+            display: none;
+        }
+    }
+    
+    // Додати модифікатор для фону шапки
+}

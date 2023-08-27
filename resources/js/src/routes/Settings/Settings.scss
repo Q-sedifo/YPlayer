@@ -1,0 +1,86 @@
+
+.settings {
+    .auth-info, .color-settings, .theme-settings, .animated-background {
+        .block__content {
+            padding: var(--base-padding);
+        }
+    }
+
+    .auth-info {
+        &__logout-btn {
+            color: var(--red);
+            margin-top: var(--base-padding);
+
+            .box-icon svg {
+                fill: var(--red);
+            }
+        }
+    }
+
+    .color-settings {
+        #color-settings__input {
+            width: 0px;
+            height: 0px;
+            opacity: 0;
+        }
+
+        &__panel-color {
+            display: block;
+            padding: var(--base-padding);
+            background-color: var(--custom);
+            width: 100px;
+            border-radius: 5px;
+            border: 1px solid var(--primary);
+            cursor: pointer;
+        }
+    }
+
+    .theme-settings {
+        .block__content {
+            display: flex;
+            align-items: center;
+            gap: var(--base-padding);
+        }
+
+        &__theme {
+            border-radius: 10px;
+            // border: 3px solid rgba(0, 0, 0, 0);
+            padding: 5px;
+            cursor: pointer;
+
+            &_active {
+                border: 3px solid var(--custom);
+            }
+
+            &_white::before {
+                content: '';
+                display: block;
+                width: 30px;
+                height: 30px;
+                background-color: var(--white);
+                border-radius: 5px;
+            }
+
+            &_dark:before {
+                content: '';
+                display: block;
+                width: 30px;
+                height: 30px;
+                background-color: var(--black);
+                border-radius: 5px;
+            }
+        }
+    }
+
+    .animated-background {
+    
+    }
+
+    @media screen and (max-width: 900px) {
+        .auth-info {
+            &__logout-btn {
+                width: 100%;
+            }
+        }
+    }
+}

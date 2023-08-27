@@ -1,0 +1,107 @@
+
+.slider {
+    width: 100%;
+
+    .song {
+        .box-icon { display: block; }
+    }
+    
+    .playlist {
+        .box-icon { display: none; }
+    }
+
+    &__header {
+        color: var(--text-color);
+        letter-spacing: 0.8px;
+
+        padding: var(--base-padding) var(--base-padding) 0 var(--base-padding);
+
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    &__tools {
+        display: flex;
+        align-items: center;
+        flex-direction: row;
+        gap: var(--small-padding);
+    }
+
+    &__content {
+        margin-top: var(--base-padding);
+        padding: 0 var(--base-padding);
+
+        transition: 0.5s;
+
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: var(--base-padding);
+
+        overflow-x: hidden;
+
+        &::-webkit-scrollbar {
+            height: 0px;
+        }
+    }
+
+    &__item {
+        position: relative;
+        overflow: hidden;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+
+        background-color: var(--secondary) !important;
+        border-radius: 10px;
+
+        flex: 0 0 auto;
+
+        padding: var(--base-padding);
+        cursor: pointer;
+
+        width: 300px;
+        height: 180px;
+
+        .box-icon svg {
+            fill: var(--custom);
+        }
+    }
+
+    &__name {
+        width: 100%;
+        position: absolute;
+
+        left: 0; bottom: 0;
+        font-weight: var(--font-weight-bold);
+        padding: var(--base-padding);
+        
+        word-wrap: break-word;
+        white-space: nowrap;
+
+        text-overflow: ellipsis;
+        overflow: hidden;
+    }
+
+    @media screen and (max-width: 900px) {
+        &__header {
+            font-size: var(--basic-font);
+        }
+
+        &__item {
+            width: 200px;
+            height: 120px;
+        }
+
+        &__tools {
+            display: none;
+        }
+    }
+}

@@ -1,0 +1,123 @@
+
+.player {
+    width: 100%;
+    z-index: 1000;
+    padding: var(--base-padding);
+    background-color: var(--secondary);
+
+    position: relative;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+    gap: var(--base-padding);
+
+    &__left-side, &__center-side, &__right-side {
+        display: flex;
+        align-items: center;
+        flex-direction: row;
+        gap: var(--base-padding);
+
+        overflow: hidden;
+    }
+
+    &__center-side {
+        flex: 1;
+        justify-content: center;
+    }
+
+    &__song-preview {
+        background-color: var(--custom);
+        width: 50px;
+        height: 50px;
+        min-height: 50px;
+        min-width: 50px;
+        border-radius: 2px;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    &__song-name {
+        font-weight: var(--font-weight-bold);
+        overflow: hidden;
+        width: 100%;
+        max-width: 500px;
+    }
+
+    &__progress-bar {
+        position: absolute;
+        width: 100%;
+        height: 3px;
+        left: 0; top: -3px;
+        background-color: var(--gray);
+        cursor: pointer;
+    }
+
+    &__progress-line {
+        width: 0px;
+        height: 100%;
+        background-color: var(--custom);
+    }
+
+    &__repeat-btn {
+        svg {
+            fill: var(--gray);
+        }
+
+        &_active {
+            svg {
+                fill: var(--text-color);
+            }
+        }
+    }
+
+    &__time {
+        color: var(--gray);
+
+        &_mobile {
+            display: none;
+        }
+    }
+
+    @media screen and (max-width: 900px) {
+        padding: var(--middle-padding) var(--base-padding);
+
+        &__left-side {
+            order: 2;
+        }
+
+        &__center-side {
+            justify-content: normal;
+        }
+
+        &__song-preview {
+            width: 40px;
+            height: 40px;
+            min-height: 40px;
+            min-width: 40px;
+        }
+
+        &__song-name {
+            marquee {
+                width: 100%;
+            }
+        }
+
+        &__progress-bar {
+            height: 1px;
+            top: -1px;
+        }
+
+        &__time {
+            display: none;
+
+            &_mobile {
+                display: block;
+                font-size: var(--small-font);
+            }
+        }
+    }
+}

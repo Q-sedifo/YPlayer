@@ -1,0 +1,41 @@
+
+.songs {
+    min-height: 100vh;
+    background-color: var(--primary);
+
+    .container {
+        height: 100vh;
+    }
+
+    &__add-song-btn {
+        width: 100%;
+        padding: var(--base-padding);
+
+        color: var(--gray);
+
+        display: flex;
+        align-items: center;
+        flex-direction: row;
+        gap: var(--base-padding);
+
+        font-weight: var(--font-weight-bold);
+
+        cursor: pointer;
+
+        .box-icon svg {
+            fill: var(--text-color);
+        }
+
+        div {
+            width: 40px;
+            height: 40px;
+            background-color: var(--secondary);
+
+            padding: var(--small-padding);
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    }
+}
