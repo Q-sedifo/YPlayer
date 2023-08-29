@@ -1,9 +1,9 @@
-# React Blog application
+# YPlayer application
 ___
 
 [-> Video review](https://www.youtube.com/watch?v=DFk0d5aIHu4&ab_channel=DeProg)
 
-**Short description**
+**Short description**  
 YPlayer is a web application that allows users to download their MP3 files, create their own playlists, and play music online. The project has client and server parts that interact to provide the functionality of the application.
 
 ___
